@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Rivera | Diseño Estratégico & Recursos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans flex flex-col min-h-screen">
+
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="text-xl font-bold tracking-tight text-slate-900 flex items-center gap-2">
+        <span class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-sm font-black">AR</span>
+        Alex Rivera
+      </a>
+      
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="#servicios" class="hover:text-indigo-600 transition-colors">Servicios</a>
+        <a href="#tienda" class="hover:text-indigo-600 transition-colors">Tienda Digital</a>
+        <a href="#contacto" class="hover:text-indigo-600 transition-colors">Contacto</a>
+      </nav>
+
+      <button id="cart-btn" class="relative p-2 rounded-full hover:bg-slate-100 transition-colors text-slate-700">
+        <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+        <span id="cart-count" class="absolute -top-1 -right-1 bg-indigo-600 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="py-20 px-6 text-center max-w-4xl mx-auto">
+    <span class="px-3 py-1 bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold rounded-full uppercase tracking-wider">
+      Consultoría & Activos Digitales
+    </span>
+    <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mt-6 tracking-tight leading-tight">
+      Impulso marcas digitales con diseño y estrategia.
+    </h1>
+    <p class="text-lg text-slate-600 mt-6 max-w-2xl mx-auto leading-relaxed">
+      Ayudo a empresas emergentes y profesionales a crear identidades de alto impacto y recursos listos para producción.
+    </p>
+    <div class="mt-8 flex justify-center gap-4">
+      <a href="#tienda" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl shadow-sm shadow-indigo-200 transition-all">Ver Recursos</a>
+      <a href="#contacto" class="px-6 py-3 bg-white hover:bg-slate-100 text-slate-700 font-medium border border-slate-300 rounded-xl transition-all">Contactar</a>
+    </div>
+  </section>
+
+  <section id="servicios" class="py-16 bg-white border-y border-slate-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-slate-900">Servicios a Medida</h2>
+        <p class="text-slate-600 text-sm mt-1">Colaboración directa con entregas claras y plazos fijados.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 border border-slate-200 rounded-2xl bg-slate-50/50 hover:border-indigo-300 transition-all">
+          <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4">
+            <i data-lucide="palette" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-bold text-lg text-slate-900">Identidad de Marca</h3>
+          <p class="text-sm text-slate-600 mt-2">Logotipos, manual de identidad y guías visuales adaptadas a entornos digitales modernos.</p>
+        </div>
+
+        <div class="p-6 border border-slate-200 rounded-2xl bg-slate-50/50 hover:border-indigo-300 transition-all">
+          <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4">
+            <i data-lucide="layout" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-bold text-lg text-slate-900">Diseño Web UI/UX</h3>
+          <p class="text-sm text-slate-600 mt-2">Wireframes y prototipos en Figma listos para desarrollo Headless en Next.js y Vercel.</p>
+        </div>
+
+        <div class="p-6 border border-slate-200 rounded-2xl bg-slate-50/50 hover:border-indigo-300 transition-all">
+          <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4">
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-bold text-lg text-slate-900">Auditoría Digital</h3>
+          <p class="text-sm text-slate-600 mt-2">Revisión de rendimiento, accesibilidad y experiencia de usuario de tu producto actual.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tienda" class="py-16 max-w-6xl mx-auto px-6 w-full flex-grow">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900">Tienda de Recursos</h2>
+        <p class="text-slate-600 text-sm mt-1">Plantillas y componentes listos para utilizar.</p>
+      </div>
+
+      <div class="flex gap-2">
+        <button onclick="filterProducts('todos')" class="filter-btn px-4 py-1.5 text-xs font-semibold rounded-full bg-slate-900 text-white" data-category="todos">Todos</button>
+        <button onclick="filterProducts('plantillas')" class="filter-btn px-4 py-1.5 text-xs font-semibold rounded-full bg-slate-200 text-slate-700 hover:bg-slate-300" data-category="plantillas">Plantillas</button>
+        <button onclick="filterProducts('guías')" class="filter-btn px-4 py-1.5 text-xs font-semibold rounded-full bg-slate-200 text-slate-700 hover:bg-slate-300" data-category="guías">Guías</button>
+      </div>
+    </div>
+
+    <div id="product-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      </div>
+  </section>
+
+  <div id="cart-modal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm hidden z-50 flex justify-end">
+    <div class="w-full max-w-md bg-white h-full shadow-2xl p-6 flex flex-col">
+      <div class="flex justify-between items-center pb-4 border-b border-slate-100">
+        <h3 class="font-bold text-lg text-slate-900">Tu Cesta</h3>
+        <button onclick="toggleCart()" class="text-slate-400 hover:text-slate-700">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div id="cart-items" class="flex-grow overflow-y-auto py-4 space-y-4">
+        <p class="text-sm text-slate-400 text-center py-8">La cesta está vacía</p>
+      </div>
+
+      <div class="pt-4 border-t border-slate-100 space-y-4">
+        <div class="flex justify-between font-bold text-slate-900">
+          <span>Total:</span>
+          <span id="cart-total">0,00 €</span>
+        </div>
+        <button onclick="checkout()" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl text-center">
+          Pagar con Stripe (Simulado)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer id="contacto" class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-center md:text-left">
+        <p class="text-white font-bold text-lg">Alex Rivera Studio</p>
+        <p class="text-xs text-slate-500 mt-1">Construido con tecnología estática para máxima seguridad y velocidad.</p>
+      </div>
+      <div class="flex gap-6 text-sm">
+        <a href="#" class="hover:text-white">Twitter / X</a>
+        <a href="#" class="hover:text-white">GitHub</a>
+        <a href="#" class="hover:text-white">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Datos de productos
+    const products = [
+      { id: 1, title: 'Kit UI Figma Dashboard', category: 'plantillas', price: 29.00, tag: 'Popular' },
+      { id: 2, title: 'Guía de Headless CMS para Freelancers', category: 'guías', price: 15.00, tag: 'PDF' },
+      { id: 3, title: 'Plantilla Portfolio Minimalista', category: 'plantillas', price: 39.00, tag: 'Vercel Ready' },
+      { id: 4, title: 'Manual de Identidad Visual (Plantilla)', category: 'plantillas', price: 19.00, tag: 'Figma' },
+      { id: 5, title: 'Checklist de Seguridad Web 2026', category: 'guías', price: 9.00, tag: 'Ebook' }
+    ];
+
+    let cart = [];
+
+    // Renderizado de productos
+    function renderProducts(items) {
+      const grid = document.getElementById('product-grid');
+      grid.innerHTML = items.map(p => `
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 hover:shadow-lg transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start">
+              <span class="text-[11px] font-semibold tracking-wider text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-md uppercase">${p.tag}</span>
+              <span class="font-bold text-slate-900">${p.price.toFixed(2)} €</span>
+            </div>
+            <h4 class="font-bold text-slate-800 mt-4 text-base">${p.title}</h4>
+          </div>
+          <button onclick="addToCart(${p.id})" class="mt-6 w-full py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+            <i data-lucide="plus" class="w-4 h-4"></i> Añadir a la cesta
+          </button>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    // Filtros
+    function filterProducts(category) {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-category') === category) {
+          btn.className = 'filter-btn px-4 py-1.5 text-xs font-semibold rounded-full bg-slate-900 text-white';
+        } else {
+          btn.className = 'filter-btn px-4 py-1.5 text-xs font-semibold rounded-full bg-slate-200 text-slate-700 hover:bg-slate-300';
+        }
+      });
+
+      if (category === 'todos') {
+        renderProducts(products);
+      } else {
+        renderProducts(products.filter(p => p.category === category));
+      }
+    }
+
+    // Carrito
+    function addToCart(id) {
+      const item = products.find(p => p.id === id);
+      cart.push(item);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      document.getElementById('cart-count').innerText = cart.length;
+      const list = document.getElementById('cart-items');
+      
+      if (cart.length === 0) {
+        list.innerHTML = '<p class="text-sm text-slate-400 text-center py-8">La cesta está vacía</p>';
+      } else {
+        list.innerHTML = cart.map((item, index) => `
+          <div class="flex justify-between items-center text-sm">
+            <div>
+              <p class="font-medium text-slate-800">${item.title}</p>
+              <p class="text-slate-500 text-xs">${item.price.toFixed(2)} €</p>
+            </div>
+            <button onclick="removeFromCart(${index})" class="text-rose-500 hover:text-rose-700 text-xs">Eliminar</button>
+          </div>
+        `).join('');
+      }
+
+      const total = cart.reduce((acc, curr) => acc + curr.price, 0);
+      document.getElementById('cart-total').innerText = total.toFixed(2) + ' €';
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function toggleCart() {
+      const modal = document.getElementById('cart-modal');
+      modal.classList.toggle('hidden');
+    }
+
+    function checkout() {
+      if (cart.length === 0) return alert('La cesta está vacía.');
+      alert('¡Redirigiendo a pasarela segura (simulada)! Total: ' + document.getElementById('cart-total').innerText);
+    }
+
+    document.getElementById('cart-btn').addEventListener('click', toggleCart);
+
+    // Inicialización
+    renderProducts(products);
+    lucide.createIcons();
+  </script>
+</body>
+</html>
